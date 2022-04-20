@@ -1,6 +1,11 @@
 import React from 'react'
 import './sortingvisualizer.css'
 
+import { 
+    selectionSort, bubblesort,
+    insertionSort
+} from '../Algorithms'
+
 
 function SortingVisualizer() {
     const [array, setArray] = React.useState([])
@@ -18,13 +23,12 @@ function SortingVisualizer() {
 
     const resetArray = React.useCallback(() => {
         const emptyArray = []
-        for (let i=0; i<50; i++) {
+        for (let i=0; i<100; i++) {
             emptyArray.push(randomIntFromInterval(5, 700));
         }
         setArray(emptyArray)
         setLoop(0)
         setPlaying(false)
-        // setSortHistory([[...array]])
     },[])
 
     React.useEffect(() => {
@@ -37,34 +41,16 @@ function SortingVisualizer() {
         console.log('mine')
     },[resetArray])
     
-    const bubblesort = () => {
-        var historyArray = [[...array]];
-        for (let i = 0; i < size - 1; i++) {
-            for (let j = 0; j < size - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                var swap = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = swap;
-                historyArray.push([...array]);
-                }
-            }
-        }
-        setSortHistory(historyArray)
-        setPlaying(true)
-    }
 
     React.useEffect(() => {
         if (loop < sortHistory.length -1 && playing) {
             clearTimeout(timeoutRef.current);
             timeoutRef.current = setTimeout(() => {
                 setLoop(loop +1);
-            }, 1)
+            }, 100)
         }else setPlaying(false)
     }, [loop, playing, sortHistory.length])
 
-    // const quickSort = () => {}
-    // const heapSort = () => {}
-    // const mergeSort = () => {}
 
   return (
     <>
@@ -85,10 +71,24 @@ function SortingVisualizer() {
         </div>
 
         <button disabled={playing ? true:false} onClick={() => resetArray()}>RESET</button>
-        <button onClick={() => bubblesort()}>Merge Sort</button>
-        {/* <button onClick={() => quickSort()}>Quick Sort</button>
-        <button onClick={() => heapSort()}>Heap Sort</button>
-        <button onClick={() => mergeSort()}>Bubble Sort</button> */}
+        <button 
+            disabled={playing ? true:false}
+            onClick={() => bubblesort({size, setSortHistory, setPlaying, array})}
+        >
+            Bubble Sort
+        </button>
+        <button 
+            disabled={playing ? true:false}
+            onClick={() => selectionSort({size, setSortHistory, setPlaying, array})}
+        >
+            Selection Sort
+        </button>
+        <button 
+            disabled={playing ? true:false}
+            onClick={() => insertionSort({size, setSortHistory, setPlaying, array})}
+        >
+            Insertion Sort
+        </button>
     </>
   )
 }
