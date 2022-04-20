@@ -18,10 +18,13 @@ function SortingVisualizer() {
 
     const resetArray = React.useCallback(() => {
         const emptyArray = []
-        for (let i=0; i<250; i++) {
+        for (let i=0; i<50; i++) {
             emptyArray.push(randomIntFromInterval(5, 700));
         }
         setArray(emptyArray)
+        setLoop(0)
+        setPlaying(false)
+        // setSortHistory([[...array]])
     },[])
 
     React.useEffect(() => {
