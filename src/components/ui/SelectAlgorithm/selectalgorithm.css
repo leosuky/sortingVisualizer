@@ -1,0 +1,9 @@
+.select-algorithms {
+    width: 15vw;
+    font-size: 1.5rem;
+    text-align: center;
+    outline: none;
+    border: unset;
+    border-bottom: 3px solid royalblue;
+    font-family: inherit;
+}

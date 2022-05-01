@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+	--darkSystemGray: rgb(28, 28, 30);
+	--lightSystemBlue: rgb(0, 122, 255);
+	--darkSystemBlue: rgb(10, 132, 255);
+	--lightSystemGreen: rgb(52, 199, 89);
+	--darkSystemGreen: rgb(48, 209, 88);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: Kreon, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
