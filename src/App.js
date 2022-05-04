@@ -11,7 +11,8 @@ import {
 	MergeSort,
 	InsertionSort,
 	QuickSort,
-	BubbleSort
+	BubbleSort,
+	SelectionSort,
 } from './components/algorithms';
 
 
@@ -87,6 +88,9 @@ function App() {
 				break;
 			case "Bubble Sort":
 				BubbleSort(array, arraySteps, colorSteps);
+				break;
+			case "Selection Sort":
+				SelectionSort(array, arraySteps, colorSteps);
 				break;
 			default:
 				console.error("Invalid algorithm selected!");

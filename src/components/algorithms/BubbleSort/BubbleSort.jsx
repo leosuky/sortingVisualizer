@@ -14,7 +14,7 @@ const BubbleSort = (array, arraySteps, colorSteps) => {
     for (let i = 0; i < size - 1; i++) {
 
         for (let j = 0; j < size - i -1; j++) {
-            arraySteps.push(array.slice()); // show j in red
+            arraySteps.push(array.slice());
 			colorKey[j] = BLUE;
             colorKey[j+1] = RED;
 			colorSteps.push(colorKey.slice());

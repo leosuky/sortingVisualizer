@@ -15,7 +15,7 @@ function RangeSlider({onChange, value}) {
         </div>
 
         <div className="field">
-            <input type="range" min={5} max={100} step={5} onChange={onChange} title={value}/>
+            <input type="range" min={5} max={100} step={5} onChange={onChange} title={value} value={value}/>
         </div>
     </div>
   )
