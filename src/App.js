@@ -10,7 +10,8 @@ import './App.css';
 import {
 	MergeSort,
 	InsertionSort,
-	QuickSort
+	QuickSort,
+	BubbleSort
 } from './components/algorithms';
 
 
@@ -19,7 +20,7 @@ function App() {
 	const [arraySteps, setArraySteps] = useState([]);
 	const [colorSteps, setColorSteps] = useState([]);
 	const [currentStep, setCurrentStep] = useState(0);
-  	const [arraySize, setArraySize] = useState(50);
+  	const [arraySize, setArraySize] = useState(15);
   	const [delay, setDelay] = useState(50);
 	const [algorithm, setAlgorithm] = useState("");
 	const [timeouts, setTimeouts] = useState([]);
@@ -83,6 +84,9 @@ function App() {
 				break;
 			case "Insertion Sort":
 				InsertionSort(array, arraySteps, colorSteps);
+				break;
+			case "Bubble Sort":
+				BubbleSort(array, arraySteps, colorSteps);
 				break;
 			default:
 				console.error("Invalid algorithm selected!");
