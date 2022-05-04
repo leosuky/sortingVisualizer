@@ -30,7 +30,7 @@ const InsertionSort = (array, arraySteps, colorSteps) => {
 		array[i] = temp;
 		arraySteps.push(array.slice()); // after swap
 		colorKey[i] = GREEN;
-		colorKey[min_idx] = min_idx != i ? BLUE : GREEN; // revert
+		colorKey[min_idx] = min_idx !== i ? BLUE : GREEN; // revert
 		colorSteps.push(colorKey.slice());
 	}
 	arraySteps.push(array.slice());

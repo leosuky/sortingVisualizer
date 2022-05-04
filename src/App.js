@@ -1,11 +1,17 @@
+import { useState, useEffect } from 'react';
+
+// UI
 import Navbar from './components/ui/Navbar/Navbar';
 import Bar from './components/ui/Bar/Bar';
 
-// Algorithms
-import MergeSort from './components/algorithms/MergeSort';
-import { useState, useEffect } from 'react';
-
 import './App.css';
+
+// Algorithms
+import {
+	MergeSort,
+	InsertionSort,
+	QuickSort
+} from './components/algorithms';
 
 
 function App() {
@@ -13,8 +19,8 @@ function App() {
 	const [arraySteps, setArraySteps] = useState([]);
 	const [colorSteps, setColorSteps] = useState([]);
 	const [currentStep, setCurrentStep] = useState(0);
-  const [arraySize, setArraySize] = useState(50);
-  const [delay, setDelay] = useState(50);
+  	const [arraySize, setArraySize] = useState(50);
+  	const [delay, setDelay] = useState(50);
 	const [algorithm, setAlgorithm] = useState("");
 	const [timeouts, setTimeouts] = useState([]);
 	const [startGeneratingSteps, setStartGeneratingSteps] = useState(false);
@@ -72,12 +78,12 @@ function App() {
 			case "Merge Sort":
 				MergeSort(array, arraySteps, colorSteps);
 				break;
-			// case "Quick Sort":
-			// 	QuickSort(array, arraySteps, colorSteps);
-			// 	break;
-			// case "Insertion Sort":
-			// 	InsertionSort(array, arraySteps, colorSteps);
-			// 	break;
+			case "Quick Sort":
+				QuickSort(array, arraySteps, colorSteps);
+				break;
+			case "Insertion Sort":
+				InsertionSort(array, arraySteps, colorSteps);
+				break;
 			default:
 				console.error("Invalid algorithm selected!");
 		}

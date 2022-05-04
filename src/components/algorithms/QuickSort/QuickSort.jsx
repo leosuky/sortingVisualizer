@@ -1,11 +1,13 @@
-const BLUE = 0,
-	YELLOW = 1,
-	PURPLE = 2,
-	RED = 3,
-	GREEN = 4,
-	PINK = 5,
-	ORANGE = 6,
-	TEAL = 7;
+// const BLUE = 0,
+// 	YELLOW = 1,
+// 	PURPLE = 2,
+// 	RED = 3,
+// 	GREEN = 4,
+// 	PINK = 5,
+// 	ORANGE = 6,
+// 	TEAL = 7;
+
+const [YELLOW,PURPLE,GREEN,PINK, TEAL] = [1,2,4,5,7]
 
 // Global Variables
 let globalArray = [],
