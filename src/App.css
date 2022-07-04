@@ -31,3 +31,19 @@ body {
 	justify-content: space-evenly;
 	max-width: 75vw;
 }
+
+@media screen and (max-width: 1450px) {
+	
+    .Algobutton {
+		padding: 7px 15px;
+		font-size: 12px;
+	  }
+}
+
+/* @media screen and (max-width: 1000px) {
+
+    .Algobutton {
+		padding: 10px 20px;
+		font-size: 16px;
+	}
+} */
